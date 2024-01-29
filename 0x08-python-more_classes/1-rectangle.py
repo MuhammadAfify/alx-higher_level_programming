@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 
 """class name is Rectangle"""
+
 class Rectangle:
     """represent rectangle"""
 
     def __init__(self, width = 0, height = 0):
-        """new rectangle class"""
         self.width = width
         self.height = height
 
         @property
         def width(self):
-            """get and assign the width"""
             return self.__width
 
         @width.setter
@@ -24,7 +23,6 @@ class Rectangle:
 
         @property
         def height(self):
-            """get and assign the height"""
             return self.__height
 
         @height.setter
