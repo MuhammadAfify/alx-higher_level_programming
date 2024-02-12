@@ -6,25 +6,25 @@ from models.rectangle import Rectangle
 
 class square(Rectangle):
     """represent square"""
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         """initiate square"""
-        
+
         super().__init__(size, size, x, y, id)
-        
+
     @property
     def size(self):
         "Get\Set the size of the square"
         return self.width
-    
+
     @size.setter
     def size(self, value):
         self.width = value
         self.height = value
-        
+
     def update(self, *args, **kwargs):
         """Update the Square"""
-        
+
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -40,7 +40,7 @@ class square(Rectangle):
                 elif a == 3:
                     self.y = arg
             a += 1
-        
+
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
@@ -64,4 +64,3 @@ class square(Rectangle):
             "x": self.x,
             "y": self.y
             }
-                    
