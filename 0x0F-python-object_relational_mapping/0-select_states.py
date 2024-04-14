@@ -8,4 +8,4 @@ if __name__ == "__main__":
     conn = MYSQLdb.connect (user = sys.argv[1], password = sys.argv[2], db = sys.argv[3])
     curs = conn.cursor()
     curs.excute("SELECT * FROM `states`")
-    print(state) for state in curs.fetchall()
+    [print(state) for state in curs.fetchall()]
