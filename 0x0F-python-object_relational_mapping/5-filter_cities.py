@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all cities from the database"""
+"""takes name of a state as an argument and lists all cities of that state"""
 
 import MySQLdb
 from sys import argv
@@ -12,11 +12,12 @@ if __name__ == '__main__':
     cur.execute("SELECT cities.id, cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s", [argv[4]])
+                
     rows = cur.fetchall()
     j = []
     for i in rows:
         j.append(i[1])
-        print(", ".join(i))
+    print(", ".join(j))
 
     cur.close()
     db.close()
