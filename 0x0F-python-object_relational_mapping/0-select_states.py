@@ -6,7 +6,7 @@ import MySQLdb
 
 if __name__ == "__main__":
     conn = MySQLdb.connect(host = "localhoast", port = 3306, user = argv[1],
-            password = argv[2], db = argv[3])
+            passwd = argv[2], db = argv[3])
     curs = conn.cursor()
     curs.execute("SELECT * FROM states")
 
