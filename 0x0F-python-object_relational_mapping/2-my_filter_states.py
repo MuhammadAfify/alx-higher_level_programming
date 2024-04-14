@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes in an argument and displays all values in the states table where name matches the argument"""
+"""takes argument and displays values in the states table where name matches the argument"""
 
 import MySQLdb
 from sys import argv
