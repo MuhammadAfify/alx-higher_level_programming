@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""lists all states from the database hbtn_0e_0_usa"""
+"""lists all states from the database"""
 
-for sys import argv
-import MYSQLdb
+form sys import argv
+import MySQLdb
 
 if __name__ == "__main__":
-        db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
-    curs = db.cursor()
-    curs.excute("SELECT * FROM `states`")
+    conn = MySQLdb.connect(host = "localhoast", port = 3306, user = argv[1],
+            password = argv[2], db = argv[3])
+    curs = conn.cursor()
+    curs.execute("SELECT * FROM states")
+
     rows = curs.fetchall()
-    for row in rows:
-        print(row)
+    for i in rows:
+        print(i)
+
     curs.close()
-    db.close()
+    conn.close()
